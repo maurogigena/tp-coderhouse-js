@@ -1,16 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-entregable-1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hood'99</title>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-bBbHRZCFN2gDMrY4avP5V54XM94//Dp7g3I50XrUnQA5kFGlUa3/8DRpiS6LJuph" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Proyecto de Javascript</h1>
-    <h3>En este HTML voy a hacer un ejercicio de algún acto cotidiano, pero mediante JS.</h3>
-    <h2>En esta ocasión, el acto cotidiano va a ser el siguiente:</h2>
-    <h3>ES TU CUMPLEAÑOS Y NO SABÉS CON QUÉ COMIDA AGASAJAR A TUS AMIGOS.</h3>
+    <header>   
+        <div class="ad-bar">
+          <p class="ad-text">Envíos GRATIS en compras superiores a U$D150 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Mastercard y American Express Bancarias 💳</p>
+        </div>
+          <nav class="navbar nav-dark navbar-dark fixed-top">
+            <div class="container-fluid">
+              <img class="brand" src="./assets/brand.png" alt="Hood'99 Brand.">
+            </div>
+          </nav>
+    </header>
+    <section class="section">
+        <div id="productos">
+            <div class="card" id="producto1" style="width: 18rem;">
+                <img src="./assets/collar-osito.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Collar Osito 47ST</h5>
+                  <p class="card-text">$10</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 1', 10)">Agregar al carrito</button>
+                </div>
+            </div>
+            
+            <div class="card" id="producto2" style="width: 18rem;">
+                <img src="./assets/camisa-kk.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Camisa KOTK</h5>
+                  <p class="card-text">$35</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 2', 35)">Agregar al carrito</button>
+                </div>
+            </div>
 
-    <script src="./script.js"></script>
+            <div class="card" id="producto3" style="width: 18rem;">
+                <img src="./assets/zapas-nike.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Nike Blazer Low</h5>
+                  <p class="card-text">$70</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 3', 70)">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="card" id="producto4" style="width: 18rem;">
+                <img src="./assets/pantalon-para-tiendas.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pantalon KOTK</h5>
+                  <p class="card-text">$40</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 4', 40)">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="card" id="producto5" style="width: 18rem;">
+                <img src="./assets/gorra-rosa.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Cap 47ST Rosa</h5>
+                  <p class="card-text">$20</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 5', 20)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-center">
+            <div class="card-header">
+              Hood'99
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Carrito</h5>
+              <ul id="lista-carrito"></ul>
+              <p class="card-text">Total: $<span id="total">0</span></p>
+              <button href="#" class="btn btn-primary" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+            <div class="card-footer text-body-secondary">
+              Hood'99 - Pilcha Posta.
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer mt-4 mb-2">
+        Hood'99 - Pilcha Posta &copy; Mauro Gigena
+    </footer>
+<script src="./index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
