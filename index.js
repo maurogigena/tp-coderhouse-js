@@ -1,16 +1,18 @@
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 let total = 0;
 
 function agregarAlCarrito(producto, precio) {
   carrito.push({ producto, precio });
   total += precio;
   actualizarCarrito();
+  guardarCarritoEnLocalStorage();
 }
 
 function quitarDelCarrito(index) {
   total -= carrito[index].precio;
   carrito.splice(index, 1);
   actualizarCarrito();
+  guardarCarritoEnLocalStorage();
 }
 
 function actualizarCarrito() {
@@ -37,6 +39,16 @@ function finalizarCompra() {
     carrito = [];
     total = 0;
     actualizarCarrito();
+    guardarCarritoEnLocalStorage();
   }
   // Si el usuario hace clic en "Cancelar", no se ejecuta el resto de la función
 }
+
+function guardarCarritoEnLocalStorage() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Iniciar el carrito al cargar la página
+window.addEventListener('load', () => {
+  actualizarCarrito();
+});
