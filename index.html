@@ -13,6 +13,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-bBbHRZCFN2gDMrY4avP5V54XM94//Dp7g3I50XrUnQA5kFGlUa3/8DRpiS6LJuph" crossorigin="anonymous">
+  <!-- Animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>   
@@ -26,13 +28,20 @@
           </nav>
     </header>
     <section>
+      <div class="bg-img">
+        <img src="./assets/brand.png" class="brand-img animate__animated animate__fadeIn" alt="Hood'99 Brand.">
+        <img src="./assets/img-index.jpg" class="img-fluid" alt="Foto ilustrativa.">
+      </div>  
+    </section>
+    <section>
+        <h4 class="section-titles">Todos los productos 🔥&#127873;</h4>
         <div id="productos">
             <div class="card" id="producto1" style="width: 18rem;">
                 <img src="./assets/collar-osito.webp" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Collar Osito 47ST</h5>
                   <p class="card-text">$10</p>
-                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 1', 10)">Agregar al carrito</button>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Osito 47ST', 10)">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" id="producto2" style="width: 18rem;">
@@ -40,32 +49,72 @@
                 <div class="card-body">
                   <h5 class="card-title">Camisa KOTK</h5>
                   <p class="card-text">$35</p>
-                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 2', 35)">Agregar al carrito</button>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Camisa KOTK', 35)">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" id="producto3" style="width: 18rem;">
-                <img src="./assets/zapas-nike.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Nike Blazer Low</h5>
-                  <p class="card-text">$70</p>
-                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 3', 70)">Agregar al carrito</button>
-                </div>
+              <img src="./assets/campera-tnf-hombre.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Campera The North Face Hombre</h5>
+                <p class="card-text">$125</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Campera The North Face Hombre', 125)">Agregar al carrito</button>
+              </div>
             </div>
             <div class="card" id="producto4" style="width: 18rem;">
-                <img src="./assets/pantalon-para-tiendas.webp" class="card-img-top" alt="...">
+                <img src="./assets/piluso.webp" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Pantalon KOTK</h5>
-                  <p class="card-text">$40</p>
-                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 4', 40)">Agregar al carrito</button>
+                  <h5 class="card-title">Piluso 47ST</h5>
+                  <p class="card-text">$20</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Piluso 47ST', 20)">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" id="producto5" style="width: 18rem;">
+                <img src="./assets/pantalon-para-tiendas.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pantalon 47ST</h5>
+                  <p class="card-text">$40</p>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Pantalon 47ST', 40)">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="card" id="producto6" style="width: 18rem;">
+              <img src="./assets/bermuda-kk.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Bermuda KOTK</h5>
+                <p class="card-text">$35</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Bermuda KOTK', 35)">Agregar al carrito</button>
+              </div>
+            </div>
+            <div class="card" id="producto7" style="width: 18rem;">
                 <img src="./assets/gorra-rosa.webp" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Cap 47ST Rosa</h5>
                   <p class="card-text">$20</p>
-                  <button class="btn btn-primary" onclick="agregarAlCarrito('Producto 5', 20)">Agregar al carrito</button>
+                  <button class="btn btn-primary" onclick="agregarAlCarrito('Cap 47ST Rosa', 20)">Agregar al carrito</button>
                 </div>
+            </div>
+            <div class="card" id="producto8" style="width: 18rem;">
+              <img src="./assets/campera-kk-mujer.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Campera KOTK Mujer</h5>
+                <p class="card-text">$90</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Campera KOTK Mujer', 90)">Agregar al carrito</button>
+              </div>
+            </div>
+            <div class="card" id="producto9" style="width: 18rem;">
+              <img src="./assets/zapas-nike.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Nike Blazer Low</h5>
+                <p class="card-text">$120</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Nike Blazer Low', 120)">Agregar al carrito</button>
+              </div>
+            </div>
+            <div class="card" id="producto10" style="width: 18rem;">
+              <img src="./assets/zapas-adidas.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Adidas Superstar Bonega</h5>
+                <p class="card-text">$110</p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Adidas Superstar Bonega', 110)">Agregar al carrito</button>
+              </div>
             </div>
         </div>
         <div class="card text-center">
