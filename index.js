@@ -81,6 +81,13 @@ function agregarAlCarrito(producto, precio) {
   total += precio;
   actualizarCarrito();
   guardarCarritoEnLocalStorage();
+  
+  // Mensaje de alerta al usuario
+  Swal.fire({
+    title: "Producto Agregado al carrito correctamente!",
+    text: "Al final de la página verás el carrito con todos tus productos.",
+    icon: "success"
+  });
 }
 
 function quitarDelCarrito(index) {

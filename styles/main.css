@@ -102,6 +102,29 @@ body {
     border-color: #bd9559;
   }
 }
+/* FOOTER */
 .footer {
+  text-align: center;
+  background-color: #bd9b62;
+}
+.list-group-item {
+  border-color: #bd9b62;
+  background-color: #bd9b62;
+  color: #ffffff;
+}
+.footer-hover:hover {
+  color: #ffffff;
+  background-color: #bd9b62;
+  text-decoration: underline;
+}
+.offcanvas-brand {
+  height: 40px;
+  width: 95px;
+}
+.copyright {
+  font-family: "Monserrat", sans-serif;
+  color: #ffffff;
+  padding-bottom: 7px;
+  font-size: 12px;
   text-align: center;
 }
