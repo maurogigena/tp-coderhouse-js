@@ -102,6 +102,19 @@ body {
     border-color: #bd9559;
   }
 }
+/* FETCH */
+.img-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+#imageContainer img {
+  max-width: 200px;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px #00000070;
+}
 /* FOOTER */
 .footer {
   text-align: center;

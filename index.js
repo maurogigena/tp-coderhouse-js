@@ -57,7 +57,7 @@ setTimeout(function() {
 // Toastify
 setTimeout(function() {
   Toastify({
-    text: "El piluso te quedaría zarpado! 😎",
+    text: "El piluso te quedaría cheto mal! 😎",
     duration: 5000,
     gravity: "top",
     position: "right",
@@ -112,24 +112,30 @@ function actualizarCarrito() {
 }
 
 function finalizarCompra() {
-  Swal.fire({
-    title: "¿Estás seguro que deseas finalizar la compra?",
-    showDenyButton: true,
-    showCancelButton: true,
-    confirmButtonText: "Comprar",
-    denyButtonText: `Boton de Arrepentimiento`
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire("Compra exitosa! Gracias por elegirnos.", "Hood'99", "success");
-      // Limpiar carrito, total, y realizar otras acciones
-      carrito = [];
-      total = 0;
-      actualizarCarrito();
-      guardarCarritoEnLocalStorage();
-    } else if (result.isDenied) {
-      Swal.fire("Uh! Te arrepentiste?", "Dale! Comprá pilcha posta ;)", "question");
-    }
-  });
+  // Verificar si el carrito está vacío
+  if (carrito.length === 0) {
+    Swal.fire("No hay productos en el carrito", "Comprá Pilcha Posta ;)", "info");
+  } else {
+    // Continuar con el proceso de compra si hay productos en el carrito
+    Swal.fire({
+      title: "¿Estás seguro que deseas finalizar la compra?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Comprar",
+      denyButtonText: `Boton de Arrepentimiento`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Compra exitosa! Gracias por elegirnos.", "Hood'99", "success");
+        // Limpiar carrito, total, y realizar otras acciones
+        carrito = [];
+        total = 0;
+        actualizarCarrito();
+        guardarCarritoEnLocalStorage();
+      } else if (result.isDenied) {
+        Swal.fire("Uh! Te arrepentiste?", "Dale! Comprá pilcha posta ;)", "question");
+      }
+    });
+  }
 }
 
 function guardarCarritoEnLocalStorage() {
@@ -140,3 +146,25 @@ function guardarCarritoEnLocalStorage() {
 window.addEventListener('load', () => {
   actualizarCarrito();
 });
+
+//API de perritos con ropa
+async function fetchDogImages() {
+  try {
+    const response = await fetch('https://api.unsplash.com/photos/random?query=dog%20clothes&count=5&client_id=zr40iZoyXmRLqV7v752J6A4DX6cjhqxuoSEiAKYNHmc');
+    const data = await response.json();
+
+    const imageContainer = document.getElementById('imageContainer');
+
+    data.forEach(photo => {
+      const imgElement = document.createElement('img');
+      imgElement.src = photo.urls.regular;
+      imgElement.alt = photo.alt_description;
+      imageContainer.appendChild(imgElement);
+    });
+  } catch (error) {
+    console.error('Error fetching dog images:', error);
+  }
+}
+
+// Llama a la función al cargar la página
+fetchDogImages();
