@@ -100,6 +100,7 @@ function quitarDelCarrito(index) {
 function actualizarCarrito() {
   const listaCarrito = document.getElementById('lista-carrito');
   const totalElemento = document.getElementById('total');
+  const carritoBadge = document.getElementById('carrito-badge');
 
   listaCarrito.innerHTML = '';
   carrito.forEach((item, index) => {
@@ -109,6 +110,8 @@ function actualizarCarrito() {
   });
 
   totalElemento.textContent = total;
+  // Actualizar el badge del carrito con la cantidad de productos
+  carritoBadge.textContent = carrito.length;
 }
 
 function finalizarCompra() {
@@ -116,7 +119,7 @@ function finalizarCompra() {
   if (carrito.length === 0) {
     Swal.fire("No hay productos en el carrito", "Comprá Pilcha Posta ;)", "info");
   } else {
-    // Continuar con el proceso de compra si hay productos en el carrito
+    // Continuar con el proceso de compra SI HAY productos en el carrito
     Swal.fire({
       title: "¿Estás seguro que deseas finalizar la compra?",
       showDenyButton: true,
@@ -126,7 +129,7 @@ function finalizarCompra() {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Compra exitosa! Gracias por elegirnos.", "Hood'99", "success");
-        // Limpiar carrito, total, y realizar otras acciones
+        // Limpiar carrito y total, y realizar otras acciones necesarias
         carrito = [];
         total = 0;
         actualizarCarrito();
