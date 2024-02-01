@@ -59,15 +59,16 @@ setTimeout(function() {
   Toastify({
     text: "El piluso te quedaría cheto mal! 😎",
     duration: 5000,
-    gravity: "top",
-    position: "right",
+    gravity: "bottom",
+    position: "left",
     stopOnFocus: true, // Detener el temporizador cuando el usuario hace clic en la notificación
     style: {
       background: "#ad8b57",
       color: "#ffffff",
       'font-size': '16px',
       'margin-top': '50px',
-      'font-weight': '600'
+      'font-weight': '600',
+      'box-shadow': '0 4px 8px #00000070',
     }
   }).showToast();
 }, 18000);
